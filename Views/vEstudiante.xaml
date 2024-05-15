@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mperugachiAC6.Views.vEstudiante"
+             Title="vEstudiante">
+    <VerticalStackLayout Spacing="25" Padding="50">
+        <Label
+            Text="CONSUMO DE REST"
+            FontSize="24"
+            HorizontalTextAlignment="Center"/>
+
+
+        <ListView x:Name="listEstudiante">
+            <ListView.Header>
+                <Grid BackgroundColor="#2196F3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Código" TextColor="White" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="0"/>
+                    <Label Text="Nombre" TextColor="White" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="1"/>
+                    <Label Text="Apellido" TextColor="White" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="2"/>
+                    <Label Text="Edad" TextColor="White" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="3"/>
+                </Grid>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label x:Name="lblCodigo" HorizontalOptions="Center" Text="{Binding codigo}" 
+                                       Grid.Row="0"
+                                       Grid.Column="0"/>
+                            <Label x:Name="lblNombre" HorizontalOptions="Center" Text="{Binding nombre}" 
+                                       Grid.Row="0"
+                                       Grid.Column="1"/>
+                            <Label x:Name="lblApellido" HorizontalOptions="Center" Text="{Binding apellido}" 
+                                       Grid.Row="0"
+                                       Grid.Column="2"/>
+                            <Label x:Name="lblEdad" HorizontalOptions="Center" Text="{Binding edad}" 
+                                       Grid.Row="0"
+                                       Grid.Column="3"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </VerticalStackLayout>
+</ContentPage>
